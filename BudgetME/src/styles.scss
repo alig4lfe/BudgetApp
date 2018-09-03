@@ -1,0 +1,336 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.bold{
+    font-weight: bold;
+}
+/*
+.movieText{
+    font-family: fantasy;
+    position: absolute;
+    text-align: center;
+    color:black;
+    font-size: 18px;
+    height:30px;
+    width:170px;
+    top:280px;
+}
+.body{
+    position:absolute;
+    top:60px;
+} */
+body{
+    background-color: #141414;
+    
+}
+mat-dialog-container{
+  padding: unset !important;
+  border-radius: 5% !important;
+}
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif
+  }
+
+
+input[type='checkbox'] {
+    height: 0;
+    width: 0;
+  }
+  label{
+    width: 350px;
+  }
+  
+  input[type='checkbox'] + label {
+    position: relative;
+    display: flex;
+    /* margin: .6em 0; */
+    align-items: center;
+    color: transparent;
+    transition: color 250ms cubic-bezier(.4, .0, .23, 1);
+  }
+  
+  input[type='checkbox'] + label > ins {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 2em;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    transition: height 300ms cubic-bezier(.4, .0, .23, 1);
+  }
+  
+  input[type="checkbox"] + label > ins > i {
+    position: absolute;
+    bottom: 0;
+    font-style: normal;
+    color: #4FC3F7;
+  }
+
+ 
+  
+  input[type="checkbox"] + label > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 5em; */
+    /* width: 10em;
+    height: 5em; */
+    width: 170px;
+    height:280px;
+    background: transparent;
+    border: 2px solid #9E9E9E;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(.4, .0, .23, 1);
+  }
+  
+  input[type="checkbox"] + label:hover,
+  input[type="checkbox"]:focus + label { color: #fff; }
+  
+  input[type="checkbox"] + label:hover > span,
+  input[type="checkbox"]:focus + label > span { background: rgba(255,255,255,.1); }
+  
+  input[type="checkbox"]:checked + label > ins { height: 100%; }
+  
+  input[type="checkbox"]:checked + label > span {
+    border: 5.39em solid transparent;
+    /* opacity: .8; */
+    animation: shrink-bounce 200ms cubic-bezier(.4, .0, .23, 1);
+  }
+  
+  input[type="checkbox"]:checked + label > span:before {
+    content: "";
+    position: absolute;
+    top: 8em;
+    left: 5em;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transform: rotate(45deg);
+    transform-origin: 0% 100%;
+    animation: checkbox-check 125ms 250ms cubic-bezier(.4, .0, .23, 1) forwards;
+  }
+
+
+
+
+@keyframes 
+checkbox-check {  0% {
+ width: 0;
+ height: 0;
+ border-color: #212121;
+ transform: translate3d(0, 0, 0) rotate(45deg);
+}
+ 33% {
+ width: .2em;
+ height: 0;
+ transform: translate3d(0, 0, 0) rotate(45deg);
+}
+ 100% {
+ width: .2em;
+ height: .5em;
+ border-color: #212121;
+ transform: translate3d(0, -.5em, 0) rotate(45deg);
+}
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* box-shadow:0px 2px 7px rgba(76,173,194,0.6); */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  .allowScroll{
+    overflow-y: scroll; 
+    overflow-x:hidden;
+  }
+
+
+  .cdk-overlay-backdrop.cdk-overlay-backdrop-showing{
+    background-color: grey !important;
+    opacity:.5 !important;
+  }
+  .movieIcon{
+    cursor: pointer;
+    /* position:absolute; */
+    width: 170px;
+    height:270px;
+    /* border: 10px; */
+    border: 2px solid black;
+    outline-style: solid;
+    transition: transform .1s  ease-in;
+    $transition-time: .1s;
+    &:after.mat-icon-button {
+       height: 100%;
+       position: absolute;
+       transition: all $transition-time;
+       opacity: .5;
+       
+       }
+   &:active{
+       
+    
+   }
+  &:hover{
+    transform:  scale(1.2);
+  }   
+}
+.layer {
+  background-color: rgba(201, 203, 218, 0.637);
+  position: absolute;
+  text-align:center;
+  vertical-align: middle;
+  top: 0px;
+  left: 15px;
+  width: 170px;
+  height: 270px;
+  animation: shrink-bounce .15s ease-in ;
+}
+.bump{
+  position: relative;
+  top:83%;
+}
+@keyframes 
+shrink-bounce {  0% {
+ transform: scale(1.2) ;
+ }
+//  33% {
+//  transform: scale(1.2);
+// }
+// 66%{
+//   transform: scale(1.1);
+// }
+ 100% {
+ transform: scale(1);
+}
+}
+// .movieIcon:hover{
+//   opacity: .5;
+//   transition: transform .1s  ease-in;
+//   $transition-time: .15s;
+//   &:after.mat-icon-button {
+//      height: 100%;
+//      position: absolute;
+//      transition: all $transition-time;
+//      }
+//  &:active{
+//      transform:  scale(.8);
+//  }   
+// }
+.blue{
+  background-color: #4FC3F7;
+}
+.grey{
+  background-color: grey;
+  color: white;
+}
+.red{
+  background-color: rgb(245, 59, 59);
+  color: white;
+}
+.close-icon{
+  background-color: #888;
+  color: #555;
+  border-radius: 50%;
+  height: 22px;
+  width:22px;
+  text-align: center;
+  line-height: 22px;
+  position: relative;
+  margin-left:93%;
+  margin-top:-6%;
+  cursor: pointer;
+  transition: transform .1s  ease-in;
+    $transition-time: .1s;
+    &:after.mat-icon-button {
+       height: 100%;
+       position: absolute;
+       transition: all $transition-time;
+       opacity: .5;
+       
+       }
+   &:active{
+    transform:  scale(.8);
+    
+   }
+  &:hover{
+    background-color: #899;
+  }   
+}
+.white-text{
+  color:white;
+}
+
+.card-icon{
+  cursor: pointer;
+  /* position:absolute; */
+  width: 170px;
+  height:270px;
+  /* border: 10px; */
+  border: 2px solid black;
+  outline-style: solid;
+  padding: 2px;
+
+}
+
+.card-flip {
+  perspective: 1000px;
+  &:hover .flip,
+  &.hover .flip {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-flip,
+.front,
+.back {
+  width: 170px;
+  height: 480px;
+  
+}
+
+.flip {
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}

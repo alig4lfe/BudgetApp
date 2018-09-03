@@ -1,0 +1,30 @@
+.popup{
+    width:100%;
+    height:100%;
+    background-color: #141414;
+    color:white;
+    text-align: center;
+    overflow: hidden !important;
+    
+}
+.results-table{
+    position: absolute;
+    top:25%;
+    width:inherit;
+    max-width:800px;
+    height:600px;
+    background-color: bisque;
+    overflow: scroll !important;
+    
+    
+}
+.movieIcon{
+    /* position:absolute; */
+    width: 170px;
+    height:270px;
+    /* border: 10px; */
+    border: 2px solid black;
+    outline-style: solid;
+
+    
+}

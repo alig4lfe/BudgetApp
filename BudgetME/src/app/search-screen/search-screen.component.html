@@ -1,0 +1,8 @@
+<div class="popup" (click)="onNoClick()">
+  Search New Movies
+  <div class="results-table">
+    <div *ngFor="let movie of data.results">
+        <img src= "{{ baseImgURL }}{{ movie.poster_path }}" class="movieIcon">
+    </div>
+  </div>
+</div>

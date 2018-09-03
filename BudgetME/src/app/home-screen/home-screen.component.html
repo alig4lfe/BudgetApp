@@ -1,0 +1,111 @@
+<app-header> </app-header>
+<drop-down style="position:absolute; right:90px; top:5px;"></drop-down>
+<!-- <app-movie-details *ngIf="selectedMovieURL != ''"></app-movie-details> -->
+<div class="" style="height:1800px;width:100%">
+    <!-- <div class="title bold">
+      <span style="padding:unset;position: relative; top:5px">MovieTrackr</span> 
+        <button mat-button style="position:absolute;top:5px; left:76%;" (click)="getSearchItems()">
+          +
+        </button>
+        <a mat button href='/new-movie-screen'>+</a>
+      </div>
+      <div>
+        <form  style="position:absolute; left:69%; top:10px">
+            <input value="" placeholder="Search" [(ngModel)]="movieTitle" [ngModelOptions]="{standalone: true}" >
+          </form>
+        </div> -->
+        <div class="category-strip">Watched
+            <!-- <a mat button href='/new-movie-screen'>+</a> -->
+          </div>
+        <div class="container-fluid">
+            <div class="row">
+              <div *ngFor="let movie of movieDb.items; let i = index">
+              <div class="col-sm">
+                <div class=" movieBox card-img-top" >
+                  <img src= "{{ movie.poster_url }}" class="movieIcon" (click)="setSelectedMovie(movie.poster_url)" >
+                  <div class="layer" *ngIf="selectedMovieURL == movie.poster_url">
+                    <div  class="close-icon" (click)="remove(movie.$key)">x</div>
+                    <div class="bump">
+                      <button style="width:100%" class="red" mat-button>Edit</button>
+                      <!-- <button style="width:100%" class="grey" mat-button (click)="remove(movie.$key)">Delete</button> -->
+                    </div>
+                  </div>  
+                </div>
+                <div class="card-body" ></div>
+              </div>
+             </div>
+            </div>
+          </div>
+        
+        <div class="divider">***</div>
+          <div class="category-strip">To Watch</div>
+          <div class="container-fluid">
+              <div class="row">
+                <div *ngFor="let movie of  toWatchDb.items; let i = index">
+                <div class="col-sm">
+                  <div class=" movieBox card-img-top" >
+                    <img src= "{{ movie.poster_url }}" class="movieIcon" (click)="setSelectedMovie(movie.poster_url)" >
+                    <div class="layer" *ngIf="selectedMovieURL == movie.poster_url">
+                        <div  class="close-icon" (click)="removeFromToWatch(movie.$key)">x</div>
+                        <div class="bump">
+                      <button style="width:100%" class="red" mat-button (click) = "moveToWatched(movie); removeFromToWatch(movie.$key)">Mark as Watched</button>
+                      </div>
+                      <!-- <button style="width:100%" class="grey" mat-button (click)="removeFromToWatch(movie.$key)">Delete</button> -->
+                    </div>  
+                    </div>
+                  <div class="card-body" ></div>
+                </div>
+               </div>
+              </div>
+            </div>
+
+        
+        <!-- <div class="category-strip" style="top:60px">
+          <span>Watched</span> 
+          <button mat-mini-fab  style="position:absolute; margin-left:20px;" ><a mat button href='/new-movie-screen'>+</a></button>
+          <div class="movies-strip" fxLayoutAlign="left" fxLayoutGap="19px"  >
+              <div class="movieBox" style="position: relative;" *ngFor= "let movie of movieDb.items; let i = index ">
+                  <button mat-button > -->
+                      <!-- (click)="remove(movieList[i].$key)" -->
+                      <!-- <img src= "{{ movie.poster_url }}" class="movieIcon" >
+                  </button>
+                </div>
+          </div> -->
+      
+        <!-- </div> -->
+        <!-- <div class="category-strip" style="top:480px">
+          <span>To Watch</span>
+          <div class="movies-strip" fxLayoutAlign="left" fxLayoutGap="19px" >
+              <div class="movieBox" style="position: relative;" *ngFor= "let movie of  toWatchDb.items; let i = index ">
+                  <button mat-button (click)="removeFromToWatch(movie.$key)"> 
+                      <img src= "{{ movie.poster_url }}" class="movieIcon" >
+                  </button>
+                </div>
+          </div>
+        </div> -->
+<!-- 
+
+        <div class="category-strip" style="top:900px">
+            <span>Own</span>
+            <div class="movies-strip" fxLayoutAlign="left" fxLayoutGap="19px" >
+                <div class="movieBox" style="position: relative;" *ngFor= "let movies of restItems.results; let i = index ">
+                    <button mat-button  (click) ="addToToWatch(movies)">
+                        <img src= "{{ baseImgURL }}{{ movies.poster_path }}" class="movieIcon" >
+                    </button>
+                  </div>
+            </div>
+          </div>
+
+
+          <div class="category-strip" style="top:1320px">
+            <span>To Buy</span>
+            <div class="movies-strip" fxLayoutAlign="left" fxLayoutGap="19px" >
+                <div class="movieBox" style="position: relative;" *ngFor= "let movies of restItems.results; let i = index ">
+                    <button mat-button>
+                        <img src= "{{ baseImgURL }}{{ movies.poster_path }}" class="movieIcon" >
+                    </button>
+                  </div>
+            </div>
+          </div> -->
+</div>
+<app-footer></app-footer>

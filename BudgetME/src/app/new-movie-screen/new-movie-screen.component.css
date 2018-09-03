@@ -1,0 +1,21 @@
+.card-img-top{
+    margin: 0 2px !important;
+}
+.pushDown{ /* bump */
+    position: relative;
+    top:74%;
+  }
+
+  input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    color:white;
+    /* border-radius: 4px; */
+    font-size: 16px;
+    background-color: black;
+    background-image: url('/BudgetME//src/assets//icons/search.svg');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 1px 0px 1px 20px;
+}

@@ -1,0 +1,72 @@
+<app-header></app-header>
+<div style="position: absolute; z-index: 100; top:5px; left: 460px"> 
+  <input type="text" [(ngModel)]='movieTitle' placeholder="Search..."  [ngModelOptions]="{standalone: true}"  (keydown.enter)="onKeyDown($event)" >
+  <!-- <button mat-button style="width:30px !important; height:31px; position:relative; top:1px; background-color: skyblue; padding:unset !important" (click)="getSearchItems()">Enter</button> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-lg-4">
+         
+          <div class="card-flip">
+            <div class="flip">
+              <div class="front">
+              
+                <div class="card">
+                  <img src="https://image.tmdb.org/t/p/w500//kOVEVeg59E0wsnXmF9nrh6OmWII.jpg" class="card-icon">
+                 
+                </div>
+              </div>
+              <div class="back" >
+               
+                <div class="card" style="height:270px;">
+                    <img src="https://image.tmdb.org/t/p/w500//kOVEVeg59E0wsnXmF9nrh6OmWII.jpg" class="card-icon" style="transform: scaleX(-1);opacity: .3;">
+                  
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
+
+<div class="container">
+    
+  <div class="row">
+    <div *ngFor="let movie of restItems.results; let i = index">
+    <div class="col-md-2">
+      <div class=" movieBox card-img-top" >
+        <img src= "{{ baseImgURL }}{{ movie.poster_path }}" class="movieIcon" (click)="currentlySelected(movie.poster_path)"></div>
+        <div class="layer" *ngIf="selectedMovieURL == movie.poster_path">
+          <div class="pushDown">
+            <button style="width:100%" class="red" mat-button (click)="watched(movie)">+  Watched</button>
+            <button style="width:100%; color:white" class="blue" mat-button (click)="toWatch(movie)">+ To Watch</button>
+            <!-- <button mat-button (click)="watched(movie)"><span class="bold">Watched</span></button>
+            <button mat-button (click)="toWatch(movie)">ToWatch</button> -->
+          </div>
+        </div>  
+      <div class="card-body" ></div>
+    </div>
+   </div>
+  </div>
+</div>
+
+<app-footer *ngIf="restItems.results.length >=1"></app-footer>
